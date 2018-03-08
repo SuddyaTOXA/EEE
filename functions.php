@@ -1,7 +1,7 @@
 <?php
 // loading styles and scripts
 function load_style_script(){
-    wp_enqueue_style('fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700', array(), null);
+    wp_enqueue_style('fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700', array(), null);
     wp_enqueue_style('font-awesome.min', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0');
 	wp_enqueue_style('font-awesome-5', '//use.fontawesome.com/releases/v5.0.6/css/all.css', array(), '5.0.6');
     wp_enqueue_style('styles', get_template_directory_uri() . '/css/styles.css', array(), null );
@@ -259,5 +259,4 @@ if( function_exists('acf_add_options_page') ) {
 //if (function_exists('acf_set_options_page_menu') && empty($GLOBALS['admin_page_hooks']['acf-options-theme-options']) ){
 //	acf_set_options_page_menu('Theme Options');
 //}
-
 

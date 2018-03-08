@@ -32,7 +32,7 @@ get_header(); ?>
                             <span class="person-more-info">More</span>
                             <div class="person-desc more">
                                 <div class="content">
-                                    <h4>Highlights</h4>
+                                    <h6>Highlights</h6>
                                     <ul>
                                         <li>nostrud exerci tation ullamcorper</li>
                                         <li>laoreet dolore magna</li>
@@ -66,7 +66,7 @@ get_header(); ?>
                             <span class="person-more-info">More</span>
                             <div class="person-desc more">
                                 <div class="content">
-                                    <h4>Highlights</h4>
+                                    <h6>Highlights</h6>
                                     <ul>
                                         <li>nostrud exerci tation ullamcorper</li>
                                         <li>laoreet dolore magna</li>
@@ -96,7 +96,7 @@ get_header(); ?>
                             <span class="person-more-info">More</span>
                             <div class="person-desc more">
                                 <div class="content">
-                                    <h4>Highlights</h4>
+                                    <h6>Highlights</h6>
                                     <ul>
                                         <li>nostrud exerci tation ullamcorper</li>
                                         <li>laoreet dolore magna</li>
@@ -130,7 +130,7 @@ get_header(); ?>
                             <span class="person-more-info">More</span>
                             <div class="person-desc more">
                                 <div class="content">
-                                    <h4>Highlights</h4>
+                                    <h6>Highlights</h6>
                                     <ul>
                                         <li>nostrud exerci tation ullamcorper</li>
                                         <li>laoreet dolore magna</li>

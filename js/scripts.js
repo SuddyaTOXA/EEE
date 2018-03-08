@@ -31,6 +31,26 @@ jQuery(document).ready(function($) {
     // });
     // the blocking of links default behavior
 
+    //for burger menu
+    if ($('.wpcf7-form').length) {
+        $(window).on('load', function () {
+            var btn = $('.wpcf7-form').find('.wpcf7-submit'),
+                box = btn.parent(),
+                newBtn = '<button type="submit" class="'+btn.attr('class')+'">'+btn.val()+'</button>';
+
+            btn.hide(0);
+            box.append(newBtn);
+        })
+    }
+
+    //for hero title
+    if ($('.hero-title-box').length) {
+        var box = $('.hero-title-box'),
+            boxWidth = box.outerWidth();
+
+        box.find('.hero-title-inner-box ').css('height',boxWidth )
+    }
+
 	// for smooth scroll
     smoothScroll.init({
         selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)

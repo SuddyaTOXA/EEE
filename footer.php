@@ -1,15 +1,14 @@
 <?php
-    $footer_logo = get_field('logo', 'option');
-    $contacts 	= get_field('contacts', 'option');
-    $emails = $contacts['emails'];
+    $footer_logo = get_field('footer_logo', 'option');
+    $emails 	= get_field('email', 'option');
 ?>
     </div>
         <footer class="footer">
             <div class="container">
                 <a href="<?php echo home_url(); ?>" class="footer-logo">
                     <?php
-                    if ( $logo['footer_logo'] ) {
-                        $footer_logo_url = $logo['footer_logo'];
+                    if ( $footer_logo ) {
+                        $footer_logo_url = $footer_logo;
                     } else {
                         $footer_logo_url = get_bloginfo('template_url') . '/img/footer_logo@2x.png';
                     }
@@ -21,11 +20,7 @@
 
                 <?php
                     if ($emails) {
-//                        echo '<div class="footer-email-box">';
-	                    foreach ($emails as $email) {
-                            echo '<a href="mailto:'.$email['email'].'" class="footer-email-box" title="'.$email['email'].'">'.$email['email'].'</a>';
-	                    }
-//	                    echo '</div>';
+                        echo '<a href="mailto:'.$emails.'" class="footer-email-box" title="'.$emails.'">'.$emails.'</a>';
                     }
                 ?>
 

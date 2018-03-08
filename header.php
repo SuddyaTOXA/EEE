@@ -16,9 +16,9 @@
             <div class="container">
                 <a href="<?php echo home_url(); ?>" class="logo">
                     <?php
-                        $logo = get_field('logo', 'option');
-                        if ( $logo['header_logo'] ) {
-                            $logo_url = $logo['header_logo'];
+                        $logo = get_field('header_logo', 'option');
+                        if ( $logo ) {
+                            $logo_url = $logo;
                         } elseif ( has_custom_logo() ) {
                             $custom_logo = wp_get_attachment_image_src( get_theme_mod('custom_logo'), 'full' );
                             $logo_url = $custom_logo[0];
