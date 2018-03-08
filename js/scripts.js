@@ -11,20 +11,6 @@ jQuery(document).ready(function($) {
         $('.mobile-menu-toggle').toggleClass('active');
         $('.mobile-menu-wrap').toggleClass('showing');
         $(document.body).toggleClass('overflow right-offset');
-
-        // if ($('mobile-menu-toggle').hasClass('active')) {
-        //     $('body').on({
-        //         'mousewheel': function(e) {
-        //             if (e.target.id == 'el') return;
-        //             e.preventDefault();
-        //             e.stopPropagation();
-        //         }
-        //     })
-        // } else {
-        //     // e.preventDefault();
-        //     // $(documet.body).unbind('touchmove, mousewheel');
-        // }
-
     });
     // $('.mobile-menu-toggle').focus(function() {
     //     $(this).addClass('focus');
@@ -49,6 +35,26 @@ jQuery(document).ready(function($) {
             boxWidth = box.outerWidth();
 
         box.find('.hero-title-inner-box ').css('height',boxWidth )
+    }
+
+    //for case study slider
+    if ($('#case-study-slider')) {
+        var swiper = new Swiper('#case-study-slider', {
+            slidesPerView: 1,
+            effect: 'fade',
+            loop: true,
+            keyboard: {
+                enabled: true
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
     }
 
 	// for smooth scroll

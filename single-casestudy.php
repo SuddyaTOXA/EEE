@@ -1,57 +1,49 @@
 <?php
 
-$post_image = get_field('post_image');
-$post_short_title = get_field('post_short_title');
+$results = get_field('results');
+//$ = get_field('');
+//$ = get_field('');
+//$ = get_field('');
 
 get_header();
 ?>
 
-    <section class="section section-post">
+    <?php get_template_part('inc/slider'); ?>
+
+    <section class="section section-case-study">
         <div class="container">
-            <div class="container-box">
-                <div class="filter-box">
-                    <h3 class="filter-title">Blog Home</h3>
-                    <h3 class="filter-title">Categories</h3>
-<!--                    <a href="/broken" class="hide all">All Category</a>-->
-                    <a href="/broken">New Work</a>
-                    <a href="/broken">Industry Trends</a>
-                    <a href="/broken">Category Three</a>
-                    <a href="/broken">Category Four</a>
-                    <a href="/broken">Category Etc</a>
-                </div>
-                <div class="container-inner">
-                    <div class="post-wrap">
-                        <?php
-                            if ($post_image || $post_short_title) {
-                        ?>
-                            <div class="post-banner">
-                                <?php
-                                    if ($post_image) {
-                                        echo '<div class="post-banner-img-wrap">
-                                                <img class="bg-img" src="'.esc_url($post_image).'" alt="'.esc_attr($post_short_title).'">
-                                            </div>';
-                                    }
-                                ?>
-
-                                <div class="post-banner-info">
-                                    <?php
-                                        if ($post_short_title) {
-                                            echo '<div class="our-work-short-title"><span>'.$post_short_title.'</span></div>';
-                                        }
-                                    ?>
-
-                                    <?php get_template_part('inc/share', 'links'); ?>
-                                </div>
-                            </div>
-	                    <?php } ?>
-                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	                            <?php the_title('<h1 class="post-title">', '</h1>'); ?>
-                            <div class="content">
-                                <?php the_content(); ?>
-                            </div>
-                            <?php endwhile; else: endif; ?>
+            <div class="section-title-box">
+                <h2 class="section-title"><?php the_title(); ?></h2>
+            </div>
+        </div>
+        <div class="container study">
+            <div class="left-box">
+	            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <div class="content">
+			            <?php the_content(); ?>
                     </div>
-                </div>
+	            <?php endwhile; else: endif; ?>
+            </div>
+            <div class="right-box">
+                <?php if ($results) { ?>
+                    <div class="quick-result-box">
+                        <h3 class="quick-title">Quick Hit Results</h3>
+                        <?php
+                            foreach ($results as $result) {
+                                if ($result['value'] || $result['description']) {
+                                    echo '<div class="quick-box">';
+                                        if ($result['value']) {
+                                            echo '<span class="value">'.$result['value'].'</span>';
+                                        }
+                                        if ($result['description']) {
+                                            echo '<p class="desc">'.$result['description'].'</p>';
+                                        }
+	                                echo '</div>';
+                                }
+                            }
+                        ?>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </section>

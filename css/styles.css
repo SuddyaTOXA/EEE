@@ -88,18 +88,12 @@ body.right-offset .footer {
     .content > *:last-child {
         margin-bottom: 0;
     }
-    .content h1,
-    .content h2,
-    .content h3,
-    .content h4,
-    .content h5,
-    .content h6,
-    .content > h1,
-    .content > h2,
-    .content > h3,
-    .content > h4,
-    .content > h5,
-    .content > h6 {
+    .content h1, .content > h1,
+    .content h2, .content > h2,
+    .content h3, .content > h3,
+    .content h4, .content > h4,
+    .content h5, .content > h5,
+    .content h6, .content > h6 {
         margin-bottom: 40px;
         line-height: 1.1;
     }
@@ -121,22 +115,38 @@ body.right-offset .footer {
     .content h6 {
         font-size: 18px;
     }
+
+    .content h1 + ol, .content > h1 + ol,
+    .content h1 + ol, .content > h1 + ol,
+    .content h2 + ol, .content > h2 + ol,
+    .content h2 + ol, .content > h2 + ol,
+    .content h3 + ol, .content > h3 + ol,
+    .content h3 + ol, .content > h3 + ol,
+    .content h4 + ol, .content > h4 + ol,
+    .content h4 + ol, .content > h4 + ol,
+    .content h5 + ol, .content > h5 + ol,
+    .content h5 + ol, .content > h5 + ol,
+    .content h6 + ol, .content > h6 + ol,
+    .content h6 + ul, .content > h6 + ul {
+        margin-top: -34px;
+    }
     .partner .content h1,
     .partner .content h2,
     .partner .content h3,
     .partner .content h4,
     .partner .content h5,
     .partner .content h6 {
+        font-size: 18px;
         color: #0474B2;
     }
-    .person-desc .content > h1,
-    .person-desc .content > h2,
-    .person-desc .content > h3,
-    .person-desc .content > h4,
-    .person-desc .content > h5,
-    .person-desc .content > h6 {
-        margin-bottom: 4px;
-    }
+    /*.person-desc .content > h1,*/
+    /*.person-desc .content > h2,*/
+    /*.person-desc .content > h3,*/
+    /*.person-desc .content > h4,*/
+    /*.person-desc .content > h5,*/
+    /*.person-desc .content > h6 {*/
+        /*margin-bottom: 4px;*/
+    /*}*/
     .content em,
     .content i {
         font-style: italic;
@@ -1566,7 +1576,7 @@ textarea:-moz-placeholder {
                             font-size: 38px;
                             line-height: 46px;
                         }
-/*------------------------------------BLOG-POST----------------------------------*/
+/*------------------------------------BLOG-SINGLE----------------------------------*/
 .section-post {
     padding-top: 67px;
 }
@@ -1658,18 +1668,179 @@ textarea:-moz-placeholder {
                                     .share-box .social-links .fa-linkedin-in {
                                         font-size: 16px;
                                     }
-
-
-
-
-
-
-            .share-box {
-                /*display: none;*/
+/*------------------------------------CASE-STUDY-SINGLE-----------------------------*/
+.section-slider {}
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        overflow: hidden;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 486px;
+    }
+        .evenergy-swiper-nav {
+            position: absolute;
+            display: inline-block;
+            z-index: 100;
+            left: 50%;
+            bottom: 21px;
+            padding: 13px 25px 17px;
+            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, .7);
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
+            -o-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+            -webkit-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+        }
+            .evenergy-swiper-nav > * {
+                vertical-align: middle;
             }
+            .evenergy-swiper-nav .swiper-pagination {
+                position: initial;
+                display: inline-block;
+                height: 17px;
+            }
+                .evenergy-swiper-nav .swiper-button-next,
+                .evenergy-swiper-nav .swiper-button-prev {
+                    position: initial;
+                    display: inline-block;
+                    left: initial;
+                    right: initial;
+                    margin-top: 0;
+                    width: 22px;
+                    height: 20px;
+                    background-image: url(../img/arrow.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    -webkit-transition: .35s;
+                    -moz-transition: .35s;
+                    -o-transition: .35s;
+                    transition: .35s;
+                }
+                .evenergy-swiper-nav .swiper-button-next {
+                    margin-left: 6px;
+                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+                .evenergy-swiper-nav .swiper-button-prev {
+                    margin-right: 6px;
+                }
+                .evenergy-swiper-nav .swiper-pagination-bullet {
+                    width: 17px;
+                    height: 17px;
+                    margin: 0 9px;
+                    background-color: #444844;
+                    opacity: 1;
+                    -webkit-transition: .35s;
+                    -moz-transition: .35s;
+                    -o-transition: .35s;
+                    transition: .35s;
+                }
+                .evenergy-swiper-nav .swiper-button-next:hover {
+                    background-image: url(../img/arrow_h.png);
+                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+                .evenergy-swiper-nav .swiper-button-prev:hover {
+                    background-image: url(../img/arrow_h.png);
+                }
+                .evenergy-swiper-nav .swiper-pagination-bullet:hover,
+                .evenergy-swiper-nav .swiper-pagination-bullet-active {
+                    background-color: #F07F22;
+                }
+        .evenergy-swiper-nav {}
+        .evenergy-swiper-nav {}
+        .evenergy-swiper-nav {}
 
 
 
+
+.section-case-study {}
+    .section-case-study .section-title-box {
+        margin-bottom: 10px;
+    }
+    .section-case-study .section-title-box:before {
+        top: -70px;
+        left: 46px;
+    }
+        .section-case-study .section-title {
+            font-size: 47px;
+            letter-spacing: 0;
+            word-spacing: -.05em;
+        }
+        .section-case-study .container {}
+        .section-case-study .container.study {
+            overflow: hidden;
+            max-width: 945px;
+        }
+            .section-case-study .left-box,
+            .section-case-study .right-box {
+                float: left;
+                width: 50%;
+            }
+            .section-case-study .left-box {
+                width: 60%;
+                padding-right: 20px;
+            }
+                .section-case-study .left-box .content {
+                    max-width: 500px;
+                }
+            .section-case-study .right-box {
+                width: 40%;
+                margin-top: 60px;
+                padding: 7px 0 18px 20px;
+                border-left: 2px solid #0474B2;
+                text-align: right;
+            }
+                .quick-result-box {
+                    display: inline-block;
+                    text-align: left;
+                    width: 100%;
+                    max-width: 305px;
+                }
+                    .quick-title {
+                        margin-bottom: 22px;
+                        font-size: 26px;
+                        font-weight: 700;
+                        line-height: 1;
+                        color: #0474B2;
+                    }
+                    .quick-box {
+                        margin-bottom: 21px;
+                    }
+                        .quick-box > *:last-child {
+                            margin-bottom: 0;
+                        }
+                        .quick-box .value {
+                            margin-bottom: 5px;
+                            font-size: 36px;
+                            font-weight: 300;
+                            font-style: italic;
+                            line-height: 1;
+                        }
+                        .quick-box .desc {
+                            font-size: 22px;
+                            line-height: 1.2;
+                        }
 /*------------------------------------SOCIAL-LINKS----------------------------------*/
 .social-links-box {
     display: inline-block;
