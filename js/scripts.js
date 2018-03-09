@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
     prevent();
 
     //for burger menu
-    $('.mobile-menu-toggle, .mobile-menu-close, .mobile-menu-overlay, .mobile-menu a').on('click', function (e) {
+    $('.mobile-menu-toggle, .mobile-menu-box .mobile-menu-close, .mobile-menu-overlay, .mobile-menu a').on('click', function (e) {
         $('.mobile-menu-toggle').toggleClass('active');
         $('.mobile-menu-wrap').toggleClass('showing');
         $(document.body).toggleClass('overflow right-offset');
@@ -55,6 +55,17 @@ jQuery(document).ready(function($) {
                 prevEl: '.swiper-button-prev'
             }
         });
+    }
+
+    //for category filter
+    if ($('.filter-box').length) {
+        $('.btn-category, .filter-box-overlay, .filter-box a, .filter-box .mobile-menu-close').on('click', function () {
+            var btn = $(this),
+                box = btn.parents('.container-box');
+
+                box.toggleClass('show');
+                $(document.body).toggleClass('overflow');
+        })
     }
 
     //for who we are more info

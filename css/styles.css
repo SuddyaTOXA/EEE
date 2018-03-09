@@ -337,6 +337,32 @@ a.btn.inverse:focus:after,
     color: #231F20;
     border-color: #231F20;
 }
+a.btn.dark,
+.btn.dark {
+    color: #231F20;
+    font-style: italic;
+    font-weight: 300;
+}
+a.btn.dark:after,
+.btn.dark:after {
+    color: #231F20;
+    border: 1px solid #231F20;
+    background-color: transparent;
+}
+a.btn.dark:hover,
+a.btn.dark:focus,
+.btn.dark:hover,
+.btn.dark:focus {
+    color: #E74D25;
+    text-decoration: none;
+}
+a.btn.dark:hover:after,
+a.btn.dark:focus:after,
+.btn.dark:hover:after,
+.btn.dark:focus:after {
+    color: #E74D25;
+    border-color: #E74D25;
+}
 /*-------------------------------------FORM----------------------------------------*/
 .input-style {
     display: block;
@@ -481,13 +507,15 @@ textarea:-moz-placeholder {
 /*-------------------------------------HEADER---------------------------------------*/
 /*----------------------------------------------------------------------------------*/
 .header {
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
     height: 85px;
     width: 100%;
     padding: 12px 0 12px;
     background-color: #f1f1f2;
+    -webkit-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+    -moz-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+    -ms-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+    -o-box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.2);
 }
     .header .container {
         position: relative;
@@ -1003,13 +1031,13 @@ textarea:-moz-placeholder {
     .section-title-box {
         position: relative;
         padding-left: 109px;
-        margin-top: 32px;
+        margin-top: 30px;
         margin-bottom: 37px;
     }
     .section-title-box:before {
         position: absolute;
         z-index: 3;
-        top: -29px;
+        top: -27px;
         left: 52px;
         content: '';
         width: 149px;
@@ -1461,6 +1489,7 @@ textarea:-moz-placeholder {
                                 }
 
         .filter-box {
+            position: relative;
             float: right;
             width: 160px;
             min-height: 260px;
@@ -1492,6 +1521,37 @@ textarea:-moz-placeholder {
             .filter-box a.hide {
                 display: none;
             }
+    .category-btn-box {
+        display: none;
+    }
+    .filter-box-overlay {
+        position: fixed;
+        z-index: 777;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .05);
+        opacity: 1;
+        -webkit-transition:  left 0.35s, opacity 0.35s;
+        -moz-transition:  left 0.35s, opacity 0.35s;
+        -o-transition:  left 0.35s, opacity 0.35s;
+        transition:  left 0.35s, opacity 0.35s;
+    }
+    .show .filter-box-overlay {
+        right: 0;
+    }
+    .filter-box a.mobile-menu-close,
+    .filter-box .mobile-menu-close {
+        display: none;
+        top: 0;
+        left: initial;
+        right: 0;
+    }
+    .filter-box .mobile-menu-close span:before,
+    .filter-box .mobile-menu-close span:after {
+        background-color: #E74D25;
+    }
 /*------------------------------------EVENTS----------------------------------------*/
 .section-events {
 
@@ -1524,7 +1584,7 @@ textarea:-moz-placeholder {
 /*------------------------------------CONTACT---------------------------------------*/
 .section-contact {}
     .section-contact .section-title-box {
-        margin-bottom: 21px;
+        margin-bottom: 14px;
     }
     .section-contact .container.contact {
         overflow: hidden;
@@ -1532,30 +1592,32 @@ textarea:-moz-placeholder {
         max-width: 955px;
     }
     .section-contact .container.contact:after {
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 59.6%;
-        width: 2px;
-        height: 100%;
-        background-color: #015CE9;
-        -moz-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-        -webkit-transform: translate(-50%, 0);
-        -o-transform: translate(-50%, 0);
-        transform: translate(-50%, 0);
+        /*position: absolute;*/
+        /*content: '';*/
+        /*top: 0;*/
+        /*left: 59.6%;*/
+        /*width: 2px;*/
+        /*height: 100%;*/
+        /*background-color: #015CE9;*/
+        /*-moz-transform: translate(-50%, 0);*/
+        /*-ms-transform: translate(-50%, 0);*/
+        /*-webkit-transform: translate(-50%, 0);*/
+        /*-o-transform: translate(-50%, 0);*/
+        /*transform: translate(-50%, 0);*/
     }
     .section-contact .left-box,
     .section-contact .right-box {
         float: left;
     }
     .section-contact .left-box {
-        width: 60%;
-        padding-top: 8px;
-        padding-right: 20px;
+        width: -webkit-calc(100% - 310px);
+        width: calc(100% - 310px);
+        max-width: 549px;
+        padding: 8px 20px 35px;
+        border-right: 2px solid #015CE9;
     }
     .section-contact .right-box {
-        width: 40%;
+        width: 310px;
         padding-top: 2px;
         padding-left: 55px;
     }
