@@ -57,9 +57,18 @@ jQuery(document).ready(function($) {
         });
     }
 
+    //for who we are more info
+    if($('.person-more-info').length) {
+        $('.person-more-info').on('click', function () {
+            var moreBox = $(this).next('.person-desc.more');
+
+            moreBox.slideToggle(350);
+        })
+    }
+
 	// for smooth scroll
     smoothScroll.init({
-        selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+        selector: '[data-scroll], .smooth-scroll', // Selector for links (must be a class, ID, data attribute, or element tag)
         speed: 500, // Integer. How fast to complete the scroll in milliseconds
         easing: 'easeInQuad', // Easing pattern to use
         offset: 50 // Integer. How far to offset the scrolling anchor location in pixels

@@ -29,7 +29,7 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <span class="person-more-info">More</span>
+                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -63,7 +63,7 @@ get_header(); ?>
                             </div>
 
 
-                            <span class="person-more-info">More</span>
+                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -93,7 +93,7 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <span class="person-more-info">More</span>
+                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -127,7 +127,7 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <span class="person-more-info">More</span>
+                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -142,10 +142,10 @@ get_header(); ?>
                     </li>
                 </ul>
             </div>
-			<?php
-			if ( have_posts() ) : while ( have_posts() ) : the_post();
-				the_content();
-			endwhile; else: endif;
+<?php
+//			if ( have_posts() ) : while ( have_posts() ) : the_post();
+//				the_content();
+//			endwhile; else: endif;
 			?>
         </div>
 	</section

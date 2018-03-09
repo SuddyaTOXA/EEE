@@ -50,14 +50,10 @@
                                 ));
 
                                 $contacts 	= get_field('contacts', 'option');
-                                $emails = $contacts['emails'];
+                                $emails 	= get_field('email', 'option');
 
                                 if ($emails) {
-//                                    echo '<div class="menu-email-box">';
-                                    foreach ($emails as $email) {
-                                        echo '<a href="mailto:'.$email['email'].'" class="menu-email-box" title="'.$email['email'].'">'.$email['email'].'</a>';
-                                    }
-//                                    echo '</div>';
+                                    echo '<a href="mailto:'.$emails.'" class="menu-email-box" title="'.$emails.'">'.$emails.'</a>';
                                 }
                             ?>
 

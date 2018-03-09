@@ -117,17 +117,17 @@ body.right-offset .footer {
     }
 
     .content h1 + ol, .content > h1 + ol,
-    .content h1 + ol, .content > h1 + ol,
+    .content h1 + ul, .content > h1 + ul,
     .content h2 + ol, .content > h2 + ol,
-    .content h2 + ol, .content > h2 + ol,
+    .content h2 + ul, .content > h2 + ul,
     .content h3 + ol, .content > h3 + ol,
-    .content h3 + ol, .content > h3 + ol,
+    .content h3 + ul, .content > h3 + ul,
     .content h4 + ol, .content > h4 + ol,
-    .content h4 + ol, .content > h4 + ol,
+    .content h4 + ul, .content > h4 + ul,
     .content h5 + ol, .content > h5 + ol,
-    .content h5 + ol, .content > h5 + ol,
+    .content h5 + ul, .content > h5 + ul,
     .content h6 + ol, .content > h6 + ol,
-    .content h6 + ul, .content > h6 + ul {
+    .content h6 + ul, .content > h6 + ul{
         margin-top: -34px;
     }
     .partner .content h1,
@@ -298,6 +298,44 @@ a.btn:focus:after,
 .btn:hover:after,
 .btn:focus:after {
     background-color: #231F20;
+}
+a.btn.small,
+.bt.smalln {
+    padding-right: 32px;
+    font-size: 18px;
+}
+a.btn.small:after,
+.btn.small:after {
+    right: 2px;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+}
+a.btn.inverse,
+.btn.inverse {
+    color: #F07F22;
+    font-style: italic;
+    font-weight: 300;
+}
+a.btn.inverse:after,
+.btn.inverse:after {
+    color: #F07F22;
+    border: 1px solid #F07F22;
+    background-color: transparent;
+}
+a.btn.inverse:hover,
+a.btn.inverse:focus,
+.btn.inverse:hover,
+.btn.inverse:focus {
+    color: #231F20;
+    text-decoration: none;
+}
+a.btn.inverse:hover:after,
+a.btn.inverse:focus:after,
+.btn.inverse:hover:after,
+.btn.inverse:focus:after {
+    color: #231F20;
+    border-color: #231F20;
 }
 /*-------------------------------------FORM----------------------------------------*/
 .input-style {
@@ -813,6 +851,7 @@ textarea:-moz-placeholder {
         .hero-title-box {
             position: relative;
             display: inline-block;
+            text-align: left;
         }
         .hero-title-box:after,
         .hero-title-box:before {
@@ -942,6 +981,7 @@ textarea:-moz-placeholder {
                     font-weight: 600;
                     line-height: 1;
                     color: #ffffff;
+                    text-transform: lowercase;
                 }
                 .hero-nav > li a:hover,
                 .hero-nav > li a:focus {
@@ -985,7 +1025,7 @@ textarea:-moz-placeholder {
             font-size: 86px;
             font-weight: 300;
             font-style: italic;
-            line-height: 1;
+            line-height: 1.1;
             letter-spacing: .05em;
         }
         .section-title.lowercase {
@@ -1627,7 +1667,7 @@ textarea:-moz-placeholder {
                     text-align: right;
                     background-color: #ffffff;
                 }
-                    .our-work-short-title {
+                    .post-banner-info .our-work-short-title {
                         top: 0;
                         bottom: auto;
                         background-color: #0474B2;
@@ -1670,6 +1710,11 @@ textarea:-moz-placeholder {
                                     }
 /*------------------------------------CASE-STUDY-SINGLE-----------------------------*/
 .section-slider {}
+.section-slider .img-box {
+    position: relative;
+    overflow: hidden;
+    height: 486px;
+}
     .swiper-container {
         width: 100%;
         height: 100%;
@@ -1683,20 +1728,20 @@ textarea:-moz-placeholder {
         width: 100%;
         height: 486px;
     }
+    .evenergy-swiper-nav-wrap {
+        position: absolute;
+        z-index: 100;
+        bottom: 21px;
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
         .evenergy-swiper-nav {
-            position: absolute;
+            position: relative;
             display: inline-block;
-            z-index: 100;
-            left: 50%;
-            bottom: 21px;
-            padding: 13px 25px 17px;
+            padding: 13px 55px 17px;
             background-color: #ffffff;
             background-color: rgba(255, 255, 255, .7);
-            -moz-transform: translate(-50%, 0);
-            -ms-transform: translate(-50%, 0);
-            -webkit-transform: translate(-50%, 0);
-            -o-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
             -webkit-border-radius: 5px;
             -khtml-border-radius: 5px;
             -moz-border-radius: 5px;
@@ -1710,12 +1755,13 @@ textarea:-moz-placeholder {
             .evenergy-swiper-nav .swiper-pagination {
                 position: initial;
                 display: inline-block;
-                height: 17px;
+                margin-bottom: -5px;
             }
                 .evenergy-swiper-nav .swiper-button-next,
                 .evenergy-swiper-nav .swiper-button-prev {
-                    position: initial;
+                    position: absolute;
                     display: inline-block;
+                    top: 50%;
                     left: initial;
                     right: initial;
                     margin-top: 0;
@@ -1731,15 +1777,22 @@ textarea:-moz-placeholder {
                     transition: .35s;
                 }
                 .evenergy-swiper-nav .swiper-button-next {
+                    right: 23px;
                     margin-left: 6px;
-                    -moz-transform: rotate(180deg);
-                    -ms-transform: rotate(180deg);
-                    -webkit-transform: rotate(180deg);
-                    -o-transform: rotate(180deg);
-                    transform: rotate(180deg);
+                    -moz-transform: translate(0, -50%) rotate(180deg);
+                    -ms-transform: translate(0, -50%) rotate(180deg);
+                    -webkit-transform: translate(0, -50%) rotate(180deg);
+                    -o-transform: translate(0, -50%) rotate(180deg);
+                    transform: translate(0, -50%) rotate(180deg);
                 }
                 .evenergy-swiper-nav .swiper-button-prev {
+                    left: 23px;
                     margin-right: 6px;
+                    -moz-transform: translate(0, -50%);
+                    -ms-transform: translate(0, -50%);
+                    -webkit-transform: translate(0, -50%);
+                    -o-transform: translate(0, -50%);
+                    transform: translate(0, -50%);
                 }
                 .evenergy-swiper-nav .swiper-pagination-bullet {
                     width: 17px;
@@ -1754,11 +1807,11 @@ textarea:-moz-placeholder {
                 }
                 .evenergy-swiper-nav .swiper-button-next:hover {
                     background-image: url(../img/arrow_h.png);
-                    -moz-transform: rotate(180deg);
-                    -ms-transform: rotate(180deg);
-                    -webkit-transform: rotate(180deg);
-                    -o-transform: rotate(180deg);
-                    transform: rotate(180deg);
+                    -moz-transform: translate(0, -50%) rotate(180deg);
+                    -ms-transform: translate(0, -50%) rotate(180deg);
+                    -webkit-transform: translate(0, -50%) rotate(180deg);
+                    -o-transform: translate(0, -50%) rotate(180deg);
+                    transform: translate(0, -50%) rotate(180deg);
                 }
                 .evenergy-swiper-nav .swiper-button-prev:hover {
                     background-image: url(../img/arrow_h.png);
@@ -1792,12 +1845,8 @@ textarea:-moz-placeholder {
             overflow: hidden;
             max-width: 945px;
         }
-            .section-case-study .left-box,
-            .section-case-study .right-box {
-                float: left;
-                width: 50%;
-            }
             .section-case-study .left-box {
+                float: left;
                 width: 60%;
                 padding-right: 20px;
             }
@@ -1805,6 +1854,7 @@ textarea:-moz-placeholder {
                     max-width: 500px;
                 }
             .section-case-study .right-box {
+                float: right;
                 width: 40%;
                 margin-top: 60px;
                 padding: 7px 0 18px 20px;
@@ -1968,12 +2018,12 @@ textarea:-moz-placeholder {
 .wrap-404 {
     text-align: center;
     padding: 60px 0 70px;
-    color: #0097de;
+    color: #231F20;
     font-size: 66px;
     letter-spacing: 0;
 }
     .wrap-404 .error-404{
         display: block;
-        margin-bottom: -20px;
-        font: 700 180px/1 "Arial";
+        margin-bottom: -28px;
+        font: 700 180px/1 "Open Sans", Arial, sans-serif;
     }
