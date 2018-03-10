@@ -3,13 +3,14 @@
  * Template Name: Contact
  */
 
+get_header();
+
 $cf = get_field('contact_form_shortcode');
 $phone = get_field('phone');
 $address = get_field('address');
 $emails = get_field('emails');
 $show_social = get_field('show_social');
 
-get_header();
 ?>
 
     <section class="section section-contact">

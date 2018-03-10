@@ -1,11 +1,7 @@
 <?php
+get_header();
 
 $results = get_field('results');
-//$ = get_field('');
-//$ = get_field('');
-//$ = get_field('');
-
-get_header();
 ?>
 
     <?php get_template_part('inc/slider'); ?>

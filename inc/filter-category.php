@@ -19,7 +19,7 @@ foreach ($cur_categories as $current) {
         <a href="/broken" class="btn dark small btn-category">Categories</a>
     </div>
     <div class="filter-box">
-        <span class="mobile-menu-close"><span></span></span>
+        <a href="/broken" class="mobile-menu-close" title="Close"><span></span></a>
         <?php
             if (is_singular('post')) {
                 echo '<h3 class="filter-title">Blog Home</h3>';

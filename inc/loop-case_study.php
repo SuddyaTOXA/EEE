@@ -11,8 +11,10 @@
             <img class="our-work-img" src="<?=$image?>" alt="<?=esc_attr($alt)?>">
 	        <?php }
                 if($short_title) { ?>
-                <div class="our-work-short-title">
-                    <span><?=$short_title?></span>
+                <div class="our-work-short-title-wrap">
+                    <div class="our-work-short-title">
+                        <span><?=$short_title?></span>
+                    </div>
                 </div>
 	        <?php } ?>
         </div>

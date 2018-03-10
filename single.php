@@ -1,9 +1,8 @@
 <?php
+get_header();
 
 $post_image = get_field('post_image');
 $post_short_title = get_field('post_short_title');
-
-get_header();
 ?>
 
     <section class="section section-post">
@@ -27,7 +26,7 @@ get_header();
                                 <div class="post-banner-info">
                                     <?php
                                         if ($post_short_title) {
-                                            echo '<div class="our-work-short-title"><span>'.$post_short_title.'</span></div>';
+                                            echo '<div class="our-work-short-title-wrap"><div class="our-work-short-title"><span>'.$post_short_title.'</span></div></div>';
                                         }
                                     ?>
 

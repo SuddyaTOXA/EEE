@@ -15,9 +15,9 @@
 					} else {
 						$icon = '';
 					}
-		//			if (!empty($link) && !empty($icon)) {
+					if (!empty($link) && !empty($icon)) {
 						echo '<li><a href="' . esc_url( $link ) . '" title="' . parse_url( $link, PHP_URL_HOST ) . '" target="_blank" rel="nofollow">' . $icon . '</a></li>';
-		//			}
+					}
 				}
 		echo '	</ul>
 			</div>';

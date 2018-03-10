@@ -1,4 +1,6 @@
-<?php get_header();
+<?php
+    get_header();
+
     $category = get_category( get_query_var( 'cat' ) );
     $cat_id = $category->cat_ID;
 ?>

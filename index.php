@@ -1,19 +1,13 @@
 <?php get_header(); ?>
 
-	<div class="content-wrap">
-		<div class="container">
-			<div class="content">
-
-				<?php 
-					if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-			    		the_content();
-			    		
-			    	endwhile; else: endif; 
-			    ?>
-
-			</div>
-		</div>
-	</div>
+    <section class="section section-post single">
+        <div class="container">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <div class="content">
+					<?php the_content(); ?>
+                </div>
+			<?php endwhile; else: endif; ?>
+        </div>
+    </section>
 
 <?php get_footer(); ?>

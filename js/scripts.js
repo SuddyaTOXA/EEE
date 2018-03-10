@@ -12,10 +12,6 @@ jQuery(document).ready(function($) {
         $('.mobile-menu-wrap').toggleClass('showing');
         $(document.body).toggleClass('overflow right-offset');
     });
-    // $('.mobile-menu-toggle').focus(function() {
-    //     $(this).addClass('focus');
-    // });
-    // the blocking of links default behavior
 
     //for burger menu
     if ($('.wpcf7-form').length) {
@@ -29,12 +25,51 @@ jQuery(document).ready(function($) {
         })
     }
 
+    $(window).keyup(function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        //open burger menu
+        if (code == 9 && $('.mobile-menu-toggle:focus').length) {
+            $('.mobile-menu-toggle').addClass('active');
+            $('.mobile-menu-wrap').addClass('showing');
+            $(document.body).addClass('overflow right-offset');
+        }
+        //close burger menu
+        if ((code == 13 && $('.mobile-menu-box .mobile-menu-close:focus').length) || (code == 27 && $('.mobile-menu-box a:focus').length)) {
+            $('.mobile-menu-toggle').removeClass('active');
+            $('.mobile-menu-wrap').removeClass('showing');
+            $(document.body).removeClass('overflow right-offset');
+        }
+        //for open filters
+        if (code == 9 && $('.category-btn-box a:focus').length) {
+            $('.container-box').addClass('show');
+        }
+        //for close filters
+        if ((code == 13 && $('.filter-box .mobile-menu-close:focus').length) || (code == 27 && $('.filter-box a:focus').length)) {
+            $('.container-box').removeClass('show');
+        }
+    });
+
+    //close burger menu
+    if ($('.mobile-menu-box a').length) {
+        $('.mobile-menu-box a:last').blur(function() {
+            $('.mobile-menu-toggle').removeClass('active');
+            $('.mobile-menu-wrap').removeClass('showing');
+            $(document.body).removeClass('overflow right-offset');
+        });
+    }
+    //for close filters
+    if ($('.filter-box a').length) {
+        $('.filter-box a:last').blur(function() {
+            $('.container-box').removeClass('show');
+        });
+    }
+
     //for hero title
     if ($('.hero-title-box').length) {
         var box = $('.hero-title-box'),
-            boxWidth = box.outerWidth();
+            boxWidth = box.find('.hero-title-inner-box').outerWidth();
 
-        box.find('.hero-title-inner-box ').css('height',boxWidth )
+        box.css('height',boxWidth )
     }
 
     //for case study slider

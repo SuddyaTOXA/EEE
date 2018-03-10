@@ -72,13 +72,13 @@
         }
 }
 @media all and (max-width: 767px) {
-    .blog-list > li:first-child .blog-short-title {
+    .blog-list > li:first-child .blog-short-title-wrap {
         bottom: 0;
     }
     .blog-list > li:first-child .blog-desc {
         bottom: -110px;
     }
-    .blog-short-title {
+    .blog-short-title-wrap {
         bottom: 30px;
     }
     .blog-desc {
@@ -123,7 +123,7 @@
         padding-top: 84px;
     }
     .admin-bar #main-content {
-        padding-top: 128px;
+        padding-top: 85px;
     }
     .content > * {
         margin-bottom: 31px;
@@ -368,7 +368,7 @@
                                 margin-bottom: 18px;
                                 padding-bottom: 0;
                             }
-                            .blog-short-title {
+                            .blog-short-title-wrap {
                                 top: 50%;
                                 width: 100px;
                                 height: 100px;
@@ -380,8 +380,8 @@
                                 -o-transform: translate(-50%, -50%);
                                 transform: translate(-50%, -50%);
                             }
-                            .our-work-short-title,
-                            .blog-list > li:first-child .blog-short-title {
+                            .our-work-short-title-wrap,
+                            .blog-list > li:first-child .our-work-short-title-wrap {
                                 top: 50%;
                                 width: 122px;
                                 height: 122px;
@@ -433,9 +433,12 @@
         padding-bottom: 40px;
         text-align: center;
     }
-        .hero-title-inner-box {
+        .hero-title-box {
             min-width: 246px;
             min-height: 246px;
+        }
+        .hero-title-inner-box {
+
             padding-left: 40px;
         }
         .hero-title {
@@ -485,7 +488,6 @@
             }
                 .social-links > li a {
                     width: 100%;
-                    /*max-width: 84px;*/
                     height: 44px;
                 }
                 .social-links .fab {
@@ -562,7 +564,9 @@
     .admin-bar .header {
         top: 0;
     }
-    .admin-bar #main-content,
+    .admin-bar #main-content {
+        padding-top: 40px;
+    }
     #main-content {
         padding-top: 85px;
     }

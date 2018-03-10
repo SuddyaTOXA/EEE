@@ -39,8 +39,10 @@ $button_link = get_field('button_link');
                                         <img class="our-work-img" src="<?=$image?>" alt="<?=$alt?>">
                                     <?php }
                                         if ($short_title) { ?>
-                                        <div class="our-work-short-title">
-                                            <span><?=$short_title?></span>
+                                        <div class="our-work-short-title-wrap">
+                                            <div class="our-work-short-title">
+                                                <span><?=$short_title?></span>
+                                            </div>
                                         </div>
                                     <?php } ?>
                                 </div>

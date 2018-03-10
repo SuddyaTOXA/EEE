@@ -1,11 +1,10 @@
 <?php
+get_header();
+
 $show_hero = get_field('show_hero');
 $hero_title = get_field('hero_title');
 $hero_image = get_field('hero_image');
 $hero_navigation = get_field('hero_navigation');
-
-
-get_header();
 ?>
 
         <?php if ($show_hero == 1) { ?>

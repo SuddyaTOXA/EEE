@@ -10,8 +10,10 @@
                 <img class="blog-img" src="<?=$image?>" alt="<?=esc_attr($alt)?>">
             <?php }
                 if($short_title) { ?>
-                <div class="blog-short-title">
-                    <span><?=$short_title?></span>
+                <div class="blog-short-title-wrap">
+                    <div class="blog-short-title">
+                        <span><?=$short_title?></span>
+                    </div>
                 </div>
             <?php } ?>
         </div>
