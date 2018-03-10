@@ -30,7 +30,7 @@
 
                 </a>
                 
-                <a href="/broken" class="mobile-menu-toggle" title="Menu" tabindex="1">
+                <a href="/broken" class="mobile-menu-toggle" title="Menu">
                     <span></span>
                 </a>
                 <div class="mobile-menu-wrap">
@@ -46,7 +46,7 @@
                                     'container'       => false,
                                     'menu_class'      => 'mobile-menu',
                                     'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
-                                    'depth'           => 1
+                                    'depth'           => 2
                                 ));
 
                                 $contacts 	= get_field('contacts', 'option');

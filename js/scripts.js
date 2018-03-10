@@ -71,9 +71,10 @@ jQuery(document).ready(function($) {
     //for who we are more info
     if($('.person-more-info').length) {
         $('.person-more-info').on('click', function () {
-            var moreBox = $(this).next('.person-desc.more');
+            var moreBox = $(this).parents('.who-we-box').find('.person-desc.more');
 
             moreBox.slideToggle(350);
+            $(this).text($(this).text() == 'More' ? 'Less' : 'More');
         })
     }
 

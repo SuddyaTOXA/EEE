@@ -12,6 +12,9 @@ get_header(); ?>
         </div>
         <div class="container blog">
             <div class="container-box">
+                <div class="category-btn-box">
+                    <a href="/broken" class="btn dark small btn-category">Categories</a>
+                </div>
                 <div class="filter-box">
                     <span class="mobile-menu-close"><span></span></span>
                     <h3 class="filter-title">Categories</h3>
@@ -24,9 +27,6 @@ get_header(); ?>
                 </div>
                 <div class="filter-box-overlay"></div>
                 <div class="container-inner">
-                    <div class="category-btn-box">
-                        <a href="/broken" class="btn dark small btn-category">Categories</a>
-                    </div>
                     <ul class="blog-list">
                         <li>
                             <a href="/broken">

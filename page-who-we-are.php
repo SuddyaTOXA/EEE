@@ -29,7 +29,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -41,6 +40,7 @@ get_header(); ?>
                                     </ul>
                                 </div>
                             </div>
+                            <span class="person-more-info btn small inverse">More</span>
                         </div>
                     </li>
                     <li>
@@ -62,8 +62,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-
-                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -73,6 +71,7 @@ get_header(); ?>
                                     </ul>
                                 </div>
                             </div>
+                            <span class="person-more-info btn small inverse">More</span>
                         </div>
                     </li>
                     <li>
@@ -93,7 +92,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -106,6 +104,7 @@ get_header(); ?>
                                     </ul>
                                 </div>
                             </div>
+                            <span class="person-more-info btn small inverse">More</span>
                         </div>
                     </li>
                     <li>
@@ -127,7 +126,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <span class="person-more-info btn small inverse">More</span>
                             <div class="person-desc more">
                                 <div class="content">
                                     <h6>Highlights</h6>
@@ -138,6 +136,7 @@ get_header(); ?>
                                     </ul>
                                 </div>
                             </div>
+                            <span class="person-more-info btn small inverse">More</span>
                         </div>
                     </li>
                 </ul>
