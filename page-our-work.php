@@ -10,64 +10,37 @@ get_header(); ?>
                 <h2 class="section-title lowercase"><?php the_title(); ?></h2>
             </div>
             <div class="our-work-list-box">
+            <?php
+                global $wp_query;
+
+                $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                $post_per_page = get_option('posts_per_page');
+                $args = array(
+                    'post_type'        => 'case_study',
+                    'post_status'      => 'publish',
+                    'orderby'       => 'date',
+                    'order'         => 'DESC',
+                    'posts_per_page'   => -1
+                );
+
+                $new_query = new WP_Query( $args );
+                 if ( $new_query->have_posts() ) :
+            ?>
                 <ul class="our-work-list">
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_1.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>ruckus obstacle races</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_3.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>plaza art fair</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_2.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>waterfire</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_3.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>plaza art fair</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_2.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>waterfire</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                <?php
+                    while ( $new_query->have_posts() ) : $new_query->the_post();
+                        get_template_part('inc/loop', 'case_study');
+                    endwhile;
+                ?>
                 </ul>
+                <?php
+                     else:
+                         echo '<p class="not-found">Sorry, no events found...</p>';
+                     endif;
+                     
+                    wp_reset_query();
+                ?>
             </div>
-			<?php
-			if ( have_posts() ) : while ( have_posts() ) : the_post();
-				the_content();
-			endwhile; else: endif;
-			?>
         </div>
 	</section
 

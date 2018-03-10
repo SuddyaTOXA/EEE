@@ -2,7 +2,13 @@
 /**
  * Template Name: Events
  */
-get_header(); ?>
+get_header();
+
+$events = get_field('popular_events');
+$button_text = get_field('button_text');
+$button_link = get_field('button_link');
+
+?>
 
     <section class="section section-events">
 		<div class="container">
@@ -18,31 +24,37 @@ get_header(); ?>
                 endwhile; else: endif;
                 ?>
             </div>
+            <?php if ($events) { ?>
                 <ul class="our-work-list popular">
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_1.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>ruckus obstacle races</span>
+	                <?php foreach ($events as $event) {
+		                $short_title = $event['short_title'];
+		                $alt = strip_tags($short_title);
+		                $link = $event['link'];
+		                $image = $event['image'];
+                    ?>
+                        <li>
+                            <a href="/broken" title="<?=$alt?>">
+                                <div class="our-work-box">
+                                    <?php if ($image) { ?>
+                                        <img class="our-work-img" src="<?=$image?>" alt="<?=$alt?>">
+                                    <?php }
+                                        if ($short_title) { ?>
+                                        <div class="our-work-short-title">
+                                            <span><?=$short_title?></span>
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/broken">
-                            <div class="our-work-box">
-                                <img class="our-work-img" src="<?php echo get_bloginfo('template_url'); ?>/img/our_work_1.jpg" alt="">
-                                <div class="our-work-short-title">
-                                    <span>ruckus obstacle races</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+	                <?php } ?>
                 </ul>
+	        <?php }
+	            if ($button_text && $button_link) {
+	        ?>
             <div class="btn-box">
-                <a href="/broken" class="btn">more event case studies</a>
+                <a href="<?=$button_link?>" title="<?=esc_attr($button_text)?>" class="btn"><?=$button_text?></a>
             </div>
+            <?php } ?>
         </div>
 	</section
 
