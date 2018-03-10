@@ -28,12 +28,12 @@ $button_link = get_field('button_link');
                 <ul class="our-work-list popular">
 	                <?php foreach ($events as $event) {
 		                $short_title = $event['short_title'];
-		                $alt = strip_tags($short_title);
+		                $alt = esc_attr(strip_tags($short_title));
 		                $link = $event['link'];
 		                $image = $event['image'];
                     ?>
                         <li>
-                            <a href="/broken" title="<?=$alt?>">
+                            <a href="<?=esc_url($link)?>" title="<?=$alt?>">
                                 <div class="our-work-box">
                                     <?php if ($image) { ?>
                                         <img class="our-work-img" src="<?=$image?>" alt="<?=$alt?>">

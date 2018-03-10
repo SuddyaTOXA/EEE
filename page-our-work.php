@@ -35,7 +35,7 @@ get_header(); ?>
                 </ul>
                 <?php
                      else:
-                         echo '<p class="not-found">Sorry, no events found...</p>';
+                         echo "<div class='no-results-wrap'><p class='not-found'>Sorry, no events found...</p></div>";
                      endif;
                      
                     wp_reset_query();

@@ -135,13 +135,20 @@ body.right-offset .footer {
     .content h6 + ul, .content > h6 + ul{
         margin-top: -26px;
     }
+    .who-we-box .content h1,
+    .who-we-box .content h2,
+    .who-we-box .content h3,
+    .who-we-box .content h4,
+    .who-we-box .content h5,
+    .who-we-box .content h6 {
+        font-size: 18px;
+    }
     .partner .content h1,
     .partner .content h2,
     .partner .content h3,
     .partner .content h4,
     .partner .content h5,
     .partner .content h6 {
-        font-size: 18px;
         color: #0474B2;
     }
     /*.person-desc .content > h1,*/
@@ -1298,8 +1305,8 @@ textarea:-moz-placeholder {
                     z-index: 10;
                     top: 50%;
                     left: 50%;
-                    width: 151px;
-                    height: 151px;
+                    width: 152px;
+                    height: 152px;
                     padding: 5px 10px 10px;
                     color: #ffffff;
                     text-align: center;
@@ -1448,8 +1455,8 @@ textarea:-moz-placeholder {
                                 z-index: 10;
                                 bottom: 62px;
                                 left: 50%;
-                                width: 107px;
-                                height: 107px;
+                                width: 108px;
+                                height: 108px;
                                 padding: 5px 5px 5px;
                                 color: #ffffff;
                                 text-align: center;
@@ -1478,8 +1485,8 @@ textarea:-moz-placeholder {
                                 }
                             .blog-list > li:first-child .blog-short-title {
                                 bottom: 40px;
-                                width: 149px;
-                                height: 149px;
+                                width: 148px;
+                                height: 148px;
                                 padding-left: 10px;
                                 padding-right: 10px;
                                 font-size: 23px;
@@ -1547,9 +1554,13 @@ textarea:-moz-placeholder {
                 font-size: 16px;
                 line-height: 1.2;
             }
+            .filter-box .all {
+                font-weight: 700;
+            }
             .filter-box a:hover,
-            .filter-box a:focus {
-                color: #F07F22;
+            .filter-box a:focus,
+            .filter-box a.active {
+                color: #E74D25;
                 text-decoration: none;
             }
             .filter-box a.hide {
@@ -1746,6 +1757,7 @@ textarea:-moz-placeholder {
             overflow: hidden;
             width: 100%;
             padding-bottom: 37%;
+            background-color: #DDDFDC;
         }
         .post-wrap {
             display: inline-block;
@@ -1757,6 +1769,12 @@ textarea:-moz-placeholder {
             max-width: -webkit-calc(100% - 184px);
             max-width: calc(100% - 184px);
         }
+            .section-post.single {
+                padding-top: 29px;
+            }
+            .section-post.single .content {
+                max-width: 960px;
+            }
             .section-post .content {
                 max-width: 776px;
                 margin: 0 auto;
@@ -1995,6 +2013,18 @@ textarea:-moz-placeholder {
                             font-size: 22px;
                             line-height: 1.2;
                         }
+.no-results-wrap {
+    display: inline-block;
+    margin-top: 30px;
+    max-width: 900px;
+    width: 100%;
+    text-align: left;
+}
+.not-found {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 300;
+}
 /*------------------------------------SOCIAL-LINKS----------------------------------*/
 .social-links-box {
     display: inline-block;

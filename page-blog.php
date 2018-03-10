@@ -36,7 +36,8 @@ get_header(); ?>
 	                    ?>
                     </ul>
                 <?php
-                    else: echo "<p class='no-results'>".__('Sorry, no posts found...', 'ico')."</p>";
+                    else:
+	                    echo "<div class='no-results-wrap'><p class='not-found'>Sorry, no posts found...</p></div>";
                     endif;
                     wp_reset_query();
                 ?>

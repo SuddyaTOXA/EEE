@@ -1,8 +1,13 @@
 <?php
 /**
- * Template Name: Ho We Are
+ * Template Name: Who We Are
  */
-get_header(); ?>
+
+get_header();
+
+$persons = get_field('person');
+
+?>
 
     <section class="section section-our-work">
 		<div class="container">
@@ -10,136 +15,45 @@ get_header(); ?>
                 <h2 class="section-title lowercase"><?php the_title(); ?></h2>
             </div>
             <div class="who-we-list-box">
-                <ul class="who-we-list">
-                    <li>
-                        <div class="who-we-box partner">
-                            <div class="person-top-box">
-                                <div class="peron-img-wrap">
-                                    <img src="<?php echo get_bloginfo('template_url'); ?>/img/person_img_1.jpg"  alt="Branden Connolly">
+                <?php if ($persons &&count($persons) > 0) { ?>
+                    <ul class="who-we-list">
+                        <?php foreach ($persons as $person)  {
+                            $high_position = ($person['high_position'] == 1) ? 'partner' : '';
+                            $image = $person['image'];
+                            $name = $person['name'];
+                            $position = $person['position'];
+                            $content = $person['content'];
+                            $more_content = $person['more_content'];
+                            ?>
+                            <li>
+                                <div class="who-we-box <?=$high_position?>">
+                                    <div class="person-top-box">
+                                        <div class="peron-img-wrap">
+                                            <img src="<?=esc_url($image)?>"  alt="<?=esc_attr($name)?>">
+                                        </div>
+                                        <div class="person-info">
+                                            <h3 class="person-name"><?=$name?></h3>
+                                            <span class="person-position"><?=$position?></span>
+                                        </div>
+                                    </div>
+                                    <div class="person-desc">
+                                        <div class="content">
+                                            <?=$content?>
+                                        </div>
+                                    </div>
+                                    <?php if ($more_content) { ?>
+                                    <div class="person-desc more">
+                                        <div class="content">
+	                                        <?=$more_content?>
+                                        </div>
+                                    </div>
+                                    <span class="person-more-info btn small inverse">More</span>
+                                    <?php } ?>
                                 </div>
-                                <div class="person-info">
-                                    <h3 class="person-name">Branden Connolly</h3>
-                                    <span class="person-position">Partner</span>
-                                </div>
-                            </div>
-                            <div class="person-desc">
-                                <div class="content">
-                                    <p>This and experience that can’t be matched. Lorem ipsum dolor sit amet, consectetuer
-                                        adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore</p>
-                                </div>
-                            </div>
-
-                            <div class="person-desc more">
-                                <div class="content">
-                                    <h6>Highlights</h6>
-                                    <ul>
-                                        <li>nostrud exerci tation ullamcorper</li>
-                                        <li>laoreet dolore magna</li>
-                                        <li>Consectetuer adipiscing elit</li>
-                                        <li>Ut wisi nibh euismod tincidunt ut laoreet</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="person-more-info btn small inverse">More</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="who-we-box partner">
-                            <div class="person-top-box">
-                                <div class="peron-img-wrap">
-                                    <img src="<?php echo get_bloginfo('template_url'); ?>/img/person_img_1.jpg" alt="Branden Connolly">
-                                </div>
-                                <div class="person-info">
-                                    <h3 class="person-name">David Steffano</h3>
-                                    <span class="person-position">Partner</span>
-                                </div>
-                            </div>
-                            <div class="person-desc">
-                                <div class="content">
-                                    <p>This and experience that can’t be matched. Lorem ipsum dolor sit amet,
-                                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                                        ut laoreet dolore consectetuer adipiscing elit, sed diam nonummy </p>
-                                </div>
-                            </div>
-
-                            <div class="person-desc more">
-                                <div class="content">
-                                    <h6>Highlights</h6>
-                                    <ul>
-                                        <li>nostrud exerci tation ullamcorper</li>
-                                        <li>laoreet dolore magna</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="person-more-info btn small inverse">More</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="who-we-box">
-                            <div class="person-top-box">
-                                <div class="peron-img-wrap">
-                                    <img src="<?php echo get_bloginfo('template_url'); ?>/img/person_img_1.jpg" alt="Branden Connolly">
-                                </div>
-                                <div class="person-info">
-                                    <h3 class="person-name">Johnny Joslin</h3>
-                                    <span class="person-position">Event Team</span>
-                                </div>
-                            </div>
-                            <div class="person-desc">
-                                <div class="content">
-                                    <p>This and experience that can’t be matched. Lorem ipsum dolor sit amet, consectetuer
-                                        adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore</p>
-                                </div>
-                            </div>
-
-                            <div class="person-desc more">
-                                <div class="content">
-                                    <h6>Highlights</h6>
-                                    <ul>
-                                        <li>nostrud exerci tation ullamcorper</li>
-                                        <li>laoreet dolore magna</li>
-                                        <li>Consectetuer adipiscing elit</li>
-                                        <li>Ut wisi nibh euismod tincidunt ut laoreet</li>
-                                        <li>Tincidunt ut laoreet</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="person-more-info btn small inverse">More</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="who-we-box">
-                            <div class="person-top-box">
-                                <div class="peron-img-wrap">
-                                    <img src="<?php echo get_bloginfo('template_url'); ?>/img/person_img_1.jpg" alt="Branden Connolly">
-                                </div>
-                                <div class="person-info">
-                                    <h3 class="person-name">Ann Egelhoff</h3>
-                                    <span class="person-position">Sponsorship Director</span>
-                                </div>
-                            </div>
-                            <div class="person-desc">
-                                <div class="content">
-                                    <p>This and experience that can’t be matched. Lorem ipsum dolor sit amet,
-                                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                        laoreet dolore dolor sit amet, consectetuer adipiscing elit, sed dia</p>
-                                </div>
-                            </div>
-
-                            <div class="person-desc more">
-                                <div class="content">
-                                    <h6>Highlights</h6>
-                                    <ul>
-                                        <li>nostrud exerci tation ullamcorper</li>
-                                        <li>laoreet dolore magna</li>
-                                        <li>Consectetuer adipiscing elit</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="person-more-info btn small inverse">More</span>
-                        </div>
-                    </li>
-                </ul>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                <?php } ?>
             </div>
 <?php
 //			if ( have_posts() ) : while ( have_posts() ) : the_post();
